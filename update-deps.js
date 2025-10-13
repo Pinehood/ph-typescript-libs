@@ -104,7 +104,6 @@ function updateOnePackage(dir) {
 }
 
 function main() {
-  console.log("argv", argv);
   run("npm cache clean --force");
   const root = process.cwd();
   for (const pkgRelPath of PACKAGES) {
