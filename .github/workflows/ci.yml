@@ -27,7 +27,7 @@ on:
       default: true
 jobs:
   integrate:
-    name: Install & Build
+    name: Integrate Code Changes
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,10 +37,13 @@ jobs:
         with:
           node-version: ${{ vars.NODE_VERSION }}
           cache: "npm"
-      - name: Install
-        run: npm install
-      - name: Build
-        run: npm run build
+      - name: Install & Build
+        run: |
+          cd ./$PACKAGE
+          npm install
+          npm run build
+        env:
+          PACKAGE: ${{ inputs.package }}
   upgrade:
     needs: integrate
     name: Upgrade Package Version
