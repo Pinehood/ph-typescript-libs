@@ -1,0 +1,94 @@
+name: Continuous Integration
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: "Package"
+        required: true
+        type: choice
+        options:
+          - ph-typescript-lib-aws
+          - ph-typescript-lib-backend
+          - ph-typescript-lib-cba
+          - ph-typescript-lib-iaac
+          - ph-typescript-lib-nestjs
+          - ph-typescript-lib-scraping
+          - ph-typescript-lib-tcp-ws
+          - ph-typescript-lib-uniswap
+    upgrade:
+      description: "Upgrade"
+      required: true
+      type: boolean
+      default: true
+    publish:
+      description: "Publish"
+      required: true
+      type: boolean
+      default: true
+jobs:
+  integrate:
+    name: Install & Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ vars.NODE_VERSION }}
+          cache: "npm"
+      - name: Install
+        run: npm install
+      - name: Build
+        run: npm run build
+  upgrade:
+    needs: integrate
+    name: Upgrade Package Version
+    runs-on: ubuntu-latest
+    if: ${{ inputs.upgrade == true }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ vars.NODE_VERSION }}
+          cache: "npm"
+          registry-url: "https://registry.npmjs.org"
+          scope: "pinehood"
+      - name: Upgrade
+        run: |
+          git config --global user.email "$EMAIL"
+          git config --global user.name "$USERNAME"
+          cd ./$PACKAGE
+          npm version patch -m "NPM Version Upgrade"
+          git push
+        env:
+          EMAIL: ${{ vars.GH_EMAIL }}
+          USERNAME: ${{ vars.GH_USERNAME }}
+          PACKAGE: ${{ inputs.package }}
+  publish:
+    needs: upgrade
+    name: Publish NPM Package
+    runs-on: ubuntu-latest
+    if: ${{ inputs.publish == true }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ vars.NODE_VERSION }}
+          cache: "npm"
+          registry-url: "https://registry.npmjs.org"
+          scope: "pinehood"
+      - name: Install, Build & Publish
+        run: |
+          cd ./$PACKAGE
+          npm install
+          npm run build
+          npm publish
+        env:
+          NODE_OPTIONS: "--max_old_space_size=8192"
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          PACKAGE: ${{ inputs.package }}

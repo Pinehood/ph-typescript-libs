@@ -1,0 +1,17 @@
+{
+  "name": "ph-typescript-lib-tcp-ws",
+  "version": "1.0.5",
+  "scripts": {
+    "build": "npx tsc --outDir ./dist"
+  },
+  "dependencies": {
+    "ph-typescript-minimal-tcp-and-ws": "file:",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.1",
+    "@types/uuid": "^10.0.0",
+    "@types/ws": "^8.18.1",
+    "typescript": "^5.9.3"
+  }
+}
