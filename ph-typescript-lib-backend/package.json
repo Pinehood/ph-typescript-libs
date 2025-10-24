@@ -9,7 +9,7 @@
     "@googlemaps/google-maps-services-js": "^3.4.2",
     "axios": "^1.12.2",
     "discord-webhook-node": "^1.1.8",
-    "google-auth-library": "^10.4.1",
+    "google-auth-library": "^10.4.2",
     "googleapis": "^164.1.0",
     "ph-typescript-lib-backend": "file:",
     "stripe": "^19.1.0"
@@ -17,9 +17,9 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.38.0",
-    "@types/express": "^5.0.3",
+    "@types/express": "^5.0.4",
     "@types/node": "^24.9.1",
-    "@types/readable-stream": "^4.0.21",
+    "@types/readable-stream": "^4.0.22",
     "@typescript-eslint/eslint-plugin": "^8.46.2",
     "@typescript-eslint/parser": "^8.46.2",
     "eslint": "^9.38.0",
