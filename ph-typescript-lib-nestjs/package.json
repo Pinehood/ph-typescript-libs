@@ -8,8 +8,8 @@
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.4.2",
     "@nestjs/cache-manager": "^3.1.0",
-    "@nestjs/common": "^11.1.14",
-    "@nestjs/core": "^11.1.14",
+    "@nestjs/common": "^11.1.15",
+    "@nestjs/core": "^11.1.15",
     "@nestjs/swagger": "^11.2.6",
     "@nestjs/typeorm": "^11.0.0",
     "@sendgrid/mail": "^8.1.6",
