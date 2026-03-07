@@ -7,8 +7,8 @@
     "debug": "node --inspect -r ts-node/register src/test.ts"
   },
   "dependencies": {
-    "@aws-sdk/client-cloudwatch-logs": "^3.1001.0",
-    "@aws-sdk/client-s3": "^3.1001.0",
+    "@aws-sdk/client-cloudwatch-logs": "^3.1004.0",
+    "@aws-sdk/client-s3": "^3.1004.0",
     "async": "^3.2.6",
     "axios": "^1.13.6",
     "ioredis": "^5.10.0",
@@ -16,11 +16,11 @@
     "readable-stream": "^4.7.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.4",
+    "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^9.39.2",
     "@types/async": "^3.2.25",
     "@types/express": "^5.0.6",
-    "@types/node": "^25.3.3",
+    "@types/node": "^25.3.5",
     "@types/readable-stream": "^4.0.23",
     "@typescript-eslint/eslint-plugin": "^8.56.1",
     "@typescript-eslint/parser": "^8.56.1",
