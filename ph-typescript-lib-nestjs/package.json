@@ -21,12 +21,12 @@
     "google-auth-library": "^10.6.1",
     "googleapis": "^171.4.0",
     "ioredis": "^5.10.0",
-    "nestjs-pino": "^4.6.0",
+    "nestjs-pino": "^4.6.1",
     "ph-typescript-lib-nestjs": "file:",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.2",
     "stripe": "^20.4.1",
-    "twilio": "^5.12.2",
+    "twilio": "^5.13.0",
     "typeorm": "^0.3.28"
   },
   "devDependencies": {
@@ -34,7 +34,7 @@
     "@eslint/js": "^9.39.2",
     "@nestjs/cli": "^11.0.16",
     "@nestjs/schematics": "^11.0.9",
-    "@types/node": "^25.4.0",
+    "@types/node": "^25.5.0",
     "@types/readable-stream": "^4.0.23",
     "@typescript-eslint/eslint-plugin": "^8.57.0",
     "@typescript-eslint/parser": "^8.57.0",
