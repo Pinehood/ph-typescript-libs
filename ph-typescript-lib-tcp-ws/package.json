@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "ph-typescript-minimal-tcp-and-ws": "file:",
-    "ws": "^8.19.0"
+    "ws": "^8.20.0"
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
