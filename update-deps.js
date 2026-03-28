@@ -14,7 +14,7 @@ const PACKAGES = [
   "ph-typescript-lib-uniswap",
 ];
 
-const SKIP = new Set(["eslint", "@eslint/js"]);
+const SKIP = new Set(["eslint", "@eslint/js", "typescript"]);
 
 function run(command, options = {}) {
   try {

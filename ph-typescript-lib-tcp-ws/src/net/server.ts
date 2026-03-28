@@ -166,7 +166,18 @@ export class NetServer implements Server {
   };
 
   private handleReceiveWs(data: WebSocket.Data, conn: Connection): void {
-    const decrypted = this.ws!.encryption.decrypt(Buffer.from(data as Buffer));
+    const rawData = Array.isArray(data)
+      ? Buffer.concat(
+          data.map((chunk) =>
+            Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk)
+          )
+        )
+      : typeof data === "string"
+      ? Buffer.from(data)
+      : Buffer.isBuffer(data)
+      ? data
+      : Buffer.from(data);
+    const decrypted = this.ws!.encryption.decrypt(rawData);
     const packet = PacketEncoder.decode(decrypted);
     if (packet && this.ws) {
       this.ws.queue.add(() =>

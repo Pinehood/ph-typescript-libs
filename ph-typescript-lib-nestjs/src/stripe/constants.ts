@@ -1,7 +1,7 @@
 export enum StripeConstants {
   TEST_MODE = "test",
   LIVE_MODE = "live",
-  API_VERSION = "2025-09-30.clover",
+  API_VERSION = "2026-03-25.dahlia",
   DASHBOARD_SANDBOX = "https://dashboard.stripe.com/test/payments/",
   DASHBOARD_PRODUCTION = "https://dashboard.stripe.com/live/payments/",
   HEADER_SIGNATURE = "stripe-signature",
