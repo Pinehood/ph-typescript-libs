@@ -7,12 +7,12 @@
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.4.2",
-    "axios": "^1.13.6",
+    "axios": "^1.14.0",
     "discord-webhook-node": "^1.1.8",
     "google-auth-library": "^10.6.2",
     "googleapis": "^171.4.0",
     "ph-typescript-lib-backend": "file:",
-    "stripe": "^20.4.1"
+    "stripe": "^21.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
@@ -28,6 +28,6 @@
     "prettier": "^3.8.1",
     "ts-loader": "^9.5.4",
     "ts-node": "^10.9.2",
-    "typescript": "^6.0.2"
+    "typescript": "^5.9.3"
   }
 }
